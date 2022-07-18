@@ -1,0 +1,45 @@
+.style-actions {
+  float: initial !important;
+  margin-left: 150px; }
+
+.tv-label-default {
+  font-size: 16px !important;
+  transition: .2s ease all;
+  color: #999 !important; }
+
+.width-stt {
+  width: 30px;
+  text-align: center; }
+
+.td-image img {
+  width: 150px; }
+
+.page-header.navbar .page-logo .logo-default {
+  margin-top: 15px; }
+
+.portlet-body .tab-pane {
+  margin-top: 35px; }
+.portlet-body .width-over {
+  overflow: hidden; }
+
+.lh-32 {
+  line-height: 32px; }
+
+.mb-0 {
+  margin-bottom: 0px; }
+
+.table-style-default.table-products td {
+  vertical-align: middle; }
+  .table-style-default.table-products td.td-image img {
+    width: 40px; }
+
+.sa-button-container button {
+  text-transform: initial !important;
+  border-radius: 8px !important;
+  width: 115px;
+  border: none;
+  padding: 10px !important; }
+  .sa-button-container button.cancel {
+    margin-right: 25px; }
+
+/*# sourceMappingURL=style_admin.css.map */

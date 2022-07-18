@@ -1,0 +1,18 @@
+<?php
+
+namespace App\Models\admin\banners;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
+
+class BannersCategoryModel extends Model
+{
+    //
+    protected $table = 'tv_categories_banners';
+
+
+    public function getAll(){
+        $listBanners = DB::table($this->table)->get();
+        return $listBanners;
+    }
+}

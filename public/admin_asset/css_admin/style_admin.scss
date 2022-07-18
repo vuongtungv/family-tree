@@ -1,0 +1,74 @@
+.style-actions{
+    float: initial !important;
+    margin-left: 150px;
+}
+
+
+// label default form
+.tv-label-default{
+    font-size: 16px !important;
+    //top: 25px;
+    transition: .2s ease all;
+    color: #999 !important;
+}
+
+
+.width-stt{
+    width: 30px;
+    text-align: center;
+}
+
+.td-image{
+    img{
+        width: 150px;
+    }
+}
+
+.page-header.navbar .page-logo .logo-default{
+    margin-top: 15px;
+}
+
+.portlet-body{
+    .tab-pane{
+        margin-top: 35px;
+    }
+    .width-over{
+        overflow: hidden;
+    }
+}
+
+
+.lh-32{
+    line-height: 32px;
+}
+.mb-0{
+    margin-bottom: 0px;
+}
+
+
+.table-style-default{
+    &.table-products{
+        td{
+            vertical-align: middle;
+            &.td-image{
+                img{
+                    width: 40px;
+                }
+            }
+        }
+    }
+}
+
+// btn comfirm
+.sa-button-container{
+    button{
+        text-transform: initial !important;
+        border-radius: 8px !important;
+        width: 115px;
+        border: none;
+        padding: 10px !important;
+        &.cancel{
+            margin-right: 25px;
+        }
+    }
+}

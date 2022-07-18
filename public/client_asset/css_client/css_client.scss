@@ -1,0 +1,9 @@
+.cat-item.active{
+    a:before{
+        border-color: #71c0ef;
+        background-color: #71c0ef;
+        content: '\f00c';
+        font-family: 'FontAwesome', sans-serif;
+        font-weight: normal;
+    }
+}

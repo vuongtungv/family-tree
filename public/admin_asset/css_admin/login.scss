@@ -1,0 +1,117 @@
+@font-face {
+    font-family: Roboto-Bold;
+    src: url("../fonts/Roboto-Bold.ttf");
+    font-weight:normal;
+    font-style:normal;
+}
+@font-face {
+    font-family: Roboto-Regular;
+    src: url("../fonts/Roboto-Regular.ttf");
+    font-weight:normal;
+    font-style:normal;
+}
+@font-face {
+    font-family: Roboto-Italic;
+    src: url("../fonts/Roboto-Italic.ttf");
+    font-weight:normal;
+    font-style:normal;
+}
+@font-face {
+    font-family: Roboto-Black;
+    src: url("../fonts/Roboto-Black.ttf");
+    font-weight:normal;
+    font-style:normal;
+}
+
+.login{
+    background-color: #5c97bd;
+    font-family: Roboto-Regular;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+.logo{
+
+    margin: 100px auto 0;
+    padding: 15px;
+    text-align: center;
+    a{
+        color: #edf4f8!important;
+        text-decoration: none;
+    }
+    h3{
+        font-size: 40px;
+        letter-spacing: 4px;
+    }
+
+}
+.content{
+    width: 400px;
+    margin: 40px auto;
+    .form-actions {
+        clear: both;
+        border: 0;
+        margin-right: -30px;
+        .btn-block{
+            color: #fff;
+            background-color: #e7505a;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            width: 100%;
+            box-shadow: none;
+            border: none;
+            line-height: 43px;
+            margin-top: 15px;
+
+        }
+    }
+}
+
+.login-form{
+    padding: 0;
+    margin: 0;
+}
+.form-title{
+    color: #edf4f8;
+    font-size: 19px;
+    font-weight: 400!important;
+    font-family: Roboto-Bold;
+}
+.form-subtitle{
+    font-family: Roboto-Regular;
+}
+.form-control{
+    background-color: #6ba3c8;
+    border: 1px solid #6ba3c8;
+    height: 43px;
+    color: #d9ecf9;
+    width: 100%;
+    padding: 0px 15px;
+    margin-top: 15px;
+    font-size: 15px;
+    &::placeholder{
+        color: #d9ecf9;
+    }
+}
+.copyright{
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    top: 80%;
+    height: fit-content;
+}
+
+
+// style alert errors only screen login
+.show-errors-alert{
+    transition: all 0.4s;
+    border: 1px solid #e7505a;
+    border-radius: 3px;
+    margin-top: 15px;
+    ul{
+        li{
+            line-height: 34px;
+            color: #FFFFFF;
+        }
+    }
+}
