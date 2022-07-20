@@ -25,7 +25,6 @@ class addFamilyTree extends FormRequest
     {
         return [
             'name' => 'required|min:5|max:255',
-            'category_id' => 'required',
         ];
     }
 
@@ -40,7 +39,6 @@ class addFamilyTree extends FormRequest
             'name.required' => __('Tiêu đề không được trống.'),
             'name.min' => __('Tiêu đề tối thiểu 5 ký tự.'),
             'name.max' => __('Tiêu đề không được vượt quá 255 ký tự.'),
-            'category.required' => __("Chưa chọn danh mục"),
         ];
     }
 }

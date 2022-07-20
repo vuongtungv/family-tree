@@ -15,19 +15,19 @@ class CreateTableTvFamilyTree extends Migration
     {
         Schema::create('tv_family_tree', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('mid');
-            $table->text('mid_name');
-            $table->integer('fid');
-            $table->text('fid_name');
-            $table->integer('pids');
-            $table->text('pids_name');
-            $table->integer('orderId');
+            $table->integer('mid')->nullable();
+            $table->text('mid_name')->nullable();
+            $table->integer('fid')->nullable();
+            $table->text('fid_name')->nullable();
+            $table->integer('pids')->nullable();
+            $table->text('pids_name')->nullable();
+            $table->integer('orderId')->nullable();;
             $table->text('relationship')->nullable();
-            $table->text('name')->nullable();
+            $table->text('name');
             $table->integer('gender')->nullable();
             $table->text('tags')->nullable();
             $table->string('img')->nullable();
-            $table->tinyInteger('status');
+            $table->tinyInteger('status')->nullable();
             $table->string('bdate')->nullable();
             $table->string('ddate')->nullable();
             $table->timestamps();

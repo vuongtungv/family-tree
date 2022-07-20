@@ -27,7 +27,7 @@
                 <div class="portlet-title">
                     <div class="caption font-dark">
                         <i class="icon-settings font-dark"></i>
-                        <span class="caption-subject bold uppercase">Danh sách tin tức</span>
+                        <span class="caption-subject bold uppercase">Danh sách thành viên</span>
                     </div>
                     <div class="actions style-actions">
                         {{--<a href="javascript:;" class="btn btn-circle btn-outline green">--}}
@@ -39,10 +39,10 @@
                     <div class="tools"></div>
                 </div>
                 <div class="portlet-body">
-                    <table class="table table-striped table-bordered table-hover table-style-default" id="sample_1">
+                    <table class="table table-bordered table-hover table-style-default table-products dataTable no-footer dtr-inline">
                         <thead>
                             <tr>
-                                <th>STT</th>
+                                <th width="20">STT</th>
                                 <th width="50" class="text-center">Ảnh</th>
                                 <th>Tên</th>
                                 <th>Bố</th>
@@ -51,14 +51,14 @@
                                 <th>Ghi chú</th>
                                 <th>Năm sinh</th>
                                 <th>Năm mất</th>
-                                <th width="175"></th>
+                                <th width="220"></th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($listFamilyTree as $key=>$item)
                                 <tr>
                                     <td>{{ $key+1 }}</td>
-                                    <td class="text-center td-image"><img src="{{ $item->image ? '/storage/app/public/'. str_replace('/original/', '/tiny/', $item->img) : ''}}" alt=""></td>
+                                    <td class="text-center td-image"><img src="{{ $item->img ? '/storage/app/public/'. str_replace('/original/', '/tiny/', $item->img) : ''}}" alt=""></td>
                                     <td><a href="{{ route('admin_edit_family_tree' , $item->id) }}">{{ $item->name }}</a></td>
                                     <td>{{ $item->mid_name }}</td>
                                     <td>{{ $item->fid_name }}</td>

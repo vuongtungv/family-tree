@@ -6,13 +6,9 @@
 
 
 <body>
-    @include('client.layouts.menu_top')
-
 
     @yield('client_content')
 
-
-    @include('client.layouts.footer')
 </body>
 
 

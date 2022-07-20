@@ -18,30 +18,10 @@
     <link rel="icon" type="image/png" sizes="96x96" href="client_asset/images/favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="client_asset/images/favicon/favicon-16x16.png">
     <link rel="manifest" href="client_asset/images/favicon/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="client_asset/images/favicon/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
 
-
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="client_asset/css/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="client_asset/css/animate.css"/>
-    <link rel="stylesheet" type="text/css" href="client_asset/css/chosen.min.css"/>
-    <link rel="stylesheet" type="text/css" href="client_asset/css/font-awesome.min.css"/>
-    <link rel="stylesheet" type="text/css" href="client_asset/css/pe-icon-7-stroke.css"/>
-    <link rel="stylesheet" type="text/css" href="client_asset/css/jquery.scrollbar.css"/>
-    <link rel="stylesheet" type="text/css" href="client_asset/css/lightbox.min.css"/>
-    <link rel="stylesheet" type="text/css" href="client_asset/css/magnific-popup.css"/>
-    <link rel="stylesheet" type="text/css" href="client_asset/css/slick.min.css"/>
-    <link rel="stylesheet" type="text/css" href="client_asset/fonts/flaticon.css"/>
-    <link rel="stylesheet" type="text/css" href="client_asset/css/megamenu.css"/>
-    <link rel="stylesheet" type="text/css" href="client_asset/css/dreaming-attribute.css"/>
     <link rel="stylesheet" type="text/css" href="client_asset/css/style.css"/>
-
-
-
-
-    <link rel="stylesheet" type="text/css" href="client_asset/css_client/css_client.css"/>
-    <title>Kogitr - Kids store</title>
+    <!DOCTYPE html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="client_asset/js/familytree.js"></script>
+    <title>Family - Tree</title>
 </head>

@@ -52,17 +52,12 @@ Route::group(['middleware' => 'checkAdminLogin', '/admin', 'prefix'=> 'admin'],f
 
 
     // tin tức
-    Route::get('/family_tree/list', [ 'uses' => 'Admin\family_tree\FamilyTreeController@index'])->name('admin_family_tree_list');
-    Route::get('/news/category/add', [ 'uses' => 'Admin\news\NewsCategoryController@view_add'])->name('admin_add_news_category');
-    Route::post('/news/category/add', [ 'uses' => 'Admin\news\NewsCategoryController@add'])->name('post_admin_add_news_category');
-    Route::get('/news/category/edit/{id}', [ 'uses' => 'Admin\news\NewsCategoryController@view_edit'])->name('admin_edit_news_category');
-    Route::post('/news/category/edit/{id}', [ 'uses' => 'Admin\news\NewsCategoryController@update'])->name('post_admin_edit_news_category');
 
     Route::get('/family_tree/list', [ 'uses' => 'Admin\FamilyTree\FamilyTreeController@index'])->name('admin_family_tree_list');
-    Route::get('/family_tree/list/add', [ 'uses' => 'Admin\FamilyTree\FamilyTreeController@view_add'])->name('admin_family_tree_add');
-    Route::post('/family_tree/list/add', [ 'uses' => 'Admin\FamilyTree\FamilyTreeController@add'])->name('post_admin_family_tree_add');
-    Route::get('/family_tree/list/edit/{id}', [ 'uses' => 'Admin\FamilyTree\FamilyTreeController@view_edit'])->name('admin_edit_family_tree');
-    Route::post('/family_tree/list/edit/{id}', [ 'uses' => 'Admin\FamilyTree\FamilyTreeController@update'])->name('post_admin_edit_family_tree');
+    Route::get('/family_tree/add', [ 'uses' => 'Admin\FamilyTree\FamilyTreeController@view_add'])->name('admin_family_tree_add');
+    Route::post('/family_tree/add', [ 'uses' => 'Admin\FamilyTree\FamilyTreeController@add'])->name('post_admin_family_tree_add');
+    Route::get('/family_tree/edit/{id}', [ 'uses' => 'Admin\FamilyTree\FamilyTreeController@view_edit'])->name('admin_edit_family_tree');
+    Route::post('/family_tree/edit/{id}', [ 'uses' => 'Admin\FamilyTree\FamilyTreeController@update'])->name('post_admin_edit_family_tree');
     Route::post('/family_tree/delete', [ 'uses' => 'Admin\products\FamilyTree\FamilyTreeController@destroy'])->name('admin_delete_family_tree');
 
 
@@ -112,14 +107,3 @@ Route::group(['middleware' => 'checkAdminLogin', '/admin', 'prefix'=> 'admin'],f
 
 Route::get('/home.html', ['uses' => 'Client\HomeController@index'])->name('client_home');
 
-
-// news home
-Route::get('/blogs/home.html', [ 'uses' => 'Client\news\NewsController@index'])->name('client_news_list_home');
-Route::get('/blogs/home/{page}.html', [ 'uses' => 'Client\news\NewsController@indexWithPage'])->name('client_news_list_home_with_page')->where(['page' => '[0-9]+']);
-
-// category news
-Route::get('/blogs/category-{id}/{alias}.html', [ 'uses' => 'Client\news\NewsController@listByCategory'])->name('client_news_list_by_category')->where(['id' => '[0-9]+']);
-Route::get('/blogs/category-{id}/{alias}/{page?}.html', [ 'uses' => 'Client\news\NewsController@listByCategoryWithPage'])->name('client_news_list_by_category_with_page')->where(['id' => '[0-9]+', 'page'=> '[0-9]+']);
-
-
-Route::get('/blogs/{id}/{alias}.html', [ 'uses' => 'Client\news\NewsController@detail'])->name('client_detail_news')->where(['id' => '[0-9]+']);

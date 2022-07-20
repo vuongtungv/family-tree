@@ -8,7 +8,7 @@
         <div class="portlet-title">
             <div class="caption">
                 <i class=" icon-layers font-red"></i>
-                <span class="caption-subject font-red sbold uppercase">Thêm mới: Tin tức</span>
+                <span class="caption-subject font-red sbold uppercase">Thêm mới: Thành viên</span>
             </div>
             <div class="actions">
                 <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
@@ -33,52 +33,60 @@
                     </ul>
                 </div>
             @endif
-            <form action="{{ route('post_admin_add_news') }}" id="add-news" method="POST" role="form" enctype="multipart/form-data">
+            <form action="{{ route('post_admin_family_tree_add') }}" id="add-news" method="POST" role="form" enctype="multipart/form-data">
                 {{ csrf_field()}}
                 <div class="form-body">
                     <div class="form-group form-md-line-input form-md-floating-label">
-                        <select id="category_id" name="category_id" class="form-control js-parent-id-placeholder">
-                            <option value="">Danh mục</option>
-                            @foreach($listCategoryNews as $item)
+                        <input type="text" class="form-control" name="name" id="name">
+                        <label for="name">Tên *</label>
+                    </div>
+                    <div class="form-group form-md-line-input form-md-floating-label">
+                        <select id="mid" name="mid" class="form-control js-parent-id-placeholder">
+                            <option value="">Chồng</option>
+                            @foreach($listFamilyTree as $item)
                                 <option value="{{$item->id}}">{{$item->name}}</option>
                             @endforeach
                         </select>
                     </div>
                     <div class="form-group form-md-line-input form-md-floating-label">
-                        <input type="text" class="form-control" name="name" id="name">
-                        <label for="name">Tiêu đề *</label>
+                        <select id="fid" name="fid" class="form-control js-parent-id-placeholder">
+                            <option value="">Vợ</option>
+                            @foreach($listFamilyTree as $item)
+                                <option value="{{$item->id}}">{{$item->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group form-md-line-input form-md-floating-label">
+                        <select id="pids" name="pids" class="form-control js-parent-id-placeholder">
+                            <option value="">Kết hôn với</option>
+                            @foreach($listFamilyTree as $item)
+                                <option value="{{$item->id}}">{{$item->name}}</option>
+                            @endforeach
+                        </select>
                     </div>
 
+
                     <div class="form-group form-md-line-input form-md-floating-label">
-                        <input type="text" class="form-control" name="alias" id="alias">
-                        <label for="alias">alias</label>
+                        <input type="text" class="form-control" name="relationship" id="relationship">
+                        <label for="alias">Ghi chú</label>
                     </div>
                     <div class="form-group form-md-line-input form-md-floating-label">
-                        <input type="text" class="form-control" name="brief" id="brief">
-                        <label for="alias">Tóm tắt</label>
+                        <input type="text" class="form-control" name="bdate" id="bdate">
+                        <label for="alias">Năm sinh</label>
                     </div>
-                    <div class="form-md-line-input form-md-floating-label">
-                        <label for="body" class="style-label-default">Nội dung</label>
-                        <textarea name="body" class="form-control" id="body"></textarea>
+                    <div class="form-group form-md-line-input form-md-floating-label">
+                        <input type="text" class="form-control" name="ddate" id="ddate">
+                        <label for="alias">Năm mất</label>
                     </div>
 
                     <div class="form-group form-md-line-input form-md-floating-label">
                         <div class="row">
                             <div class="col-md-6">
-                                <label class="tv-label-default">Trạng thái</label>
+                                <label class="tv-label-default">Giới tính</label>
                                 <div class="input-group">
                                     <div class="icheck-inline">
-                                        <label><input type="radio" value="1" name="status" checked class="icheck"> Hoạt động </label>
-                                        <label><input type="radio" value="0" name="status" class="icheck"> Ngừng </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <label class="tv-label-default">Trang chủ</label>
-                                <div class="input-group">
-                                    <div class="icheck-inline">
-                                        <label><input type="radio" value="1" name="show_home" class="icheck"> Hiện </label>
-                                        <label><input type="radio" value="0" name="show_home" checked class="icheck"> Ẩn </label>
+                                        <label><input type="radio" value="1" name="gender" checked class="icheck"> Nam </label>
+                                        <label><input type="radio" value="0" name="gender" class="icheck"> Nữ </label>
                                     </div>
                                 </div>
                             </div>
@@ -86,7 +94,7 @@
                     </div>
 
                     <div class="form-group form-md-line-input form-md-floating-label">
-                        <input type="number" class="form-control" name="ordering" id="ordering">
+                        <input type="number" class="form-control" name="orderId" id="orderId">
                         <label for="alias">Số tứ tự</label>
                     </div>
 
@@ -98,7 +106,7 @@
                             <span class="btn red btn-outline btn-file">
                                 <span class="fileinput-new"> Select image </span>
                                 <span class="fileinput-exists"> Change </span>
-                                <input type="file" name="image"> </span>
+                                <input type="file" name="img"> </span>
                                 <a href="javascript:;" class="btn red fileinput-exists" data-dismiss="fileinput">
                                     Remove </a>
                             </div>

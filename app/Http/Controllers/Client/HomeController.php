@@ -29,35 +29,10 @@ class HomeController extends Controller
 
     public function index(){
 
-        $listBanners = $this->bannersController->getBanners(1);
-
-        $oneBanner = $this->bannersController->getBanners(2);
-
-        $bannersSelling = $this->bannersController->getBanners(3);
-
-        $newsHome = $this->newsController->getNewsHome();
-
-        $brandsHome = $this->brandsController->getBrandsHome();
-
-        $listMenus = $this->menus->getMenusTop();
-
-        $getBannerNewCollection = $this->bannersController->getBanners(4);
-
-        $getBannerWithStyle = $this->bannersController->getBanners(5);
-
-        $getBannerSetStyle = $this->bannersController->getBanners(6);
-
+        $listBanners = '';
 
         $compact = [
             'listBanners',
-            'oneBanner',
-            'bannersSelling',
-            'newsHome',
-            'brandsHome',
-            'listMenus',
-            'getBannerNewCollection',
-            'getBannerWithStyle',
-            'getBannerSetStyle'
         ];
 
         return view('client.index', compact($compact));

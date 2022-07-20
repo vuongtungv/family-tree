@@ -24,7 +24,7 @@ class FamilyTreeController extends Controller
             'tiny' => '83, 83',
         ];
         $this->fileUploadController = new FileUploadController();
-        $this->path_base = '/images/news/news/';
+        $this->path_base = '/images/family_tree/';
     }
 
     //
@@ -80,10 +80,27 @@ class FamilyTreeController extends Controller
             $file_path = $this->fileUploadController->uploadImage($image, $this->path_base);
             $this->fileUploadController->uploadImageFit($image, $this->path_base, $this->array_size);
 
-            $familyTree->image = $file_path;
+            $familyTree->img = $file_path;
         }
 
         $familyTree->save();
-        return redirect()->route('admin_news')->with('success', 'Add ' . $request->name . ' successful!');
+        return redirect()->route('admin_family_tree_list')->with('success', 'Add ' . $request->name . ' successful!');
     }
+
+
+    public function view_edit($id)
+    {
+        $familyTree = new FamilyTreeModel();
+        $listFamilyTree = $familyTree->getAll();
+
+        $detail = FamilyTreeModel::findOrFail($id);
+
+        $compact = [
+            'detail',
+            'familyTree',
+            'listFamilyTree'
+        ];
+        return view('admin.FamilyTree.edit', compact($compact));
+    }
+
 }
