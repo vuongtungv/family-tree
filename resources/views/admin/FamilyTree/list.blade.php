@@ -81,6 +81,7 @@
             <!-- END EXAMPLE TABLE PORTLET-->
         </div>
     </div>
+    {{ csrf_field()}}
     <!-- END BEGIN PAGE BASE CONTENT -->
 @endsection
 

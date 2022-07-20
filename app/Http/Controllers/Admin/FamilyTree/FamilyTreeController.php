@@ -103,4 +103,67 @@ class FamilyTreeController extends Controller
         return view('admin.FamilyTree.edit', compact($compact));
     }
 
+    public function update(addFamilyTree $request, $id){
+
+        $detail = FamilyTreeModel::findOrFail($id);
+
+        $detail->name = $request->name;
+
+        $detail->mid = $request->mid;
+        $detail->fid = $request->fid;
+        $detail->pids = $request->pids;
+        $detail->orderId = $request->orderId;
+        $detail->relationship = $request->relationship;
+        $detail->bdate = $request->bdate;
+        $detail->ddate = $request->ddate;
+        $detail->tags = $request->tags;
+        $detail->status = $request->status;
+
+        if($request->mid){
+            $getDetailMId = FamilyTreeModel::findOrFail($detail->id);
+            $detail->mid_name = $getDetailMId->name;
+        }
+        if($request->fid){
+            $getDetailFId = FamilyTreeModel::findOrFail($detail->id);
+            $detail->fid_name = $getDetailFId->name;
+        }
+        if($request->pids){
+            $getDetailPIds = FamilyTreeModel::findOrFail($detail->id);
+            $detail->pids_name = $getDetailPIds->name;
+        }
+
+
+
+
+        // Kiểm tra xem người dùng có upload file lên không
+        if ($request->hasFile('img')) {
+
+            $image = $request->file('img');
+
+            $file_path = $this->fileUploadController->uploadImage($image, $this->path_base);
+            $this->fileUploadController->uploadImageFit($image, $this->path_base, $this->array_size);
+
+            $detail->img = $file_path;
+        }
+
+        $detail->save();
+        return redirect()->route('admin_family_tree_list')->with('success', 'Edit ' . $request->name . ' successfull!');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Request $request)
+    {
+        //
+        $modelFamilyTree = new FamilyTreeModel();
+        $modelFamilyTree->destroyById($request->id);
+
+        return redirect()->route('admin_family_tree_list')
+            ->with('success','Xóa thành công !');
+    }
+
 }

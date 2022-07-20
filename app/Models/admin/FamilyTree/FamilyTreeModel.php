@@ -17,4 +17,14 @@ class FamilyTreeModel extends Model
         $familyTree = DB::table($this->table)->get();
         return $familyTree;
     }
+
+    /**
+     * Xóa sản phẩm
+     *
+     */
+    public function destroyById($id){
+        FamilyTreeModel::find($id)->delete();
+
+        return true;
+    }
 }

@@ -58,7 +58,7 @@ Route::group(['middleware' => 'checkAdminLogin', '/admin', 'prefix'=> 'admin'],f
     Route::post('/family_tree/add', [ 'uses' => 'Admin\FamilyTree\FamilyTreeController@add'])->name('post_admin_family_tree_add');
     Route::get('/family_tree/edit/{id}', [ 'uses' => 'Admin\FamilyTree\FamilyTreeController@view_edit'])->name('admin_edit_family_tree');
     Route::post('/family_tree/edit/{id}', [ 'uses' => 'Admin\FamilyTree\FamilyTreeController@update'])->name('post_admin_edit_family_tree');
-    Route::post('/family_tree/delete', [ 'uses' => 'Admin\products\FamilyTree\FamilyTreeController@destroy'])->name('admin_delete_family_tree');
+    Route::post('/family_tree/delete', [ 'uses' => 'Admin\FamilyTree\FamilyTreeController@destroy'])->name('admin_delete_family_tree');
 
 
     // products
